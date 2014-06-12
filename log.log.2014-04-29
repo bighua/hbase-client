@@ -1,0 +1,8 @@
+[INFO ]2014-04-29 16:57:49 :#create keyspace
+[INFO ]2014-04-29 16:57:49 :CREATE KEYSPACE ktv WITH replication = {'class':'SimpleStrategy', 'replication_factor':2};
+[INFO ]2014-04-29 16:57:49 :#USE ktv;
+[INFO ]2014-04-29 16:57:49 :DROP TABLE ktv.songs;
+[INFO ]2014-04-29 16:57:49 :CREATE TABLE ktv.songs (id int PRIMARY KEY,title text,album text,artist text,tags set<text>,data blob);
+[INFO ]2014-04-29 16:57:49 :DROP TABLE ktv.playlists;
+[INFO ]2014-04-29 16:57:49 :#ALTER TABLE ktv.songs ADD singer map<text, text>
+[INFO ]2014-04-29 16:57:49 :CREATE TABLE ktv.playlists (id uuid,title text,album text, artist text,song_id uuid,PRIMARY KEY (id, song_id));
